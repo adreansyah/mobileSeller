@@ -1,0 +1,17 @@
+import { mergeMap } from 'rxjs/operators';
+import { ofType } from 'redux-observable';
+import { Services } from 'service'
+
+export const Request{{pascalCase name}} = (action$, store) => action$.pipe(
+    ofType("FROM_OF_TYPE"),
+    mergeMap(async (action) => {
+        console.log(Services);
+        /*
+            try{
+                something
+            }catch(err){
+                somthing
+            }
+        */
+    })
+)

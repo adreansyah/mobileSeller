@@ -1,0 +1,31 @@
+#root {
+  background-color: #eff3f6;
+}
+.helpcenter {
+  > .top-fixed {
+      padding-top: calc(63px + 16px);
+  }
+  .header {
+      padding: 18px 0;
+  }
+  .line {
+      border-bottom: 1px dashed #DCDEE3;
+      &--solid {
+        border-bottom: 1px solid #DCDEE3;
+      }
+  }
+  .round {
+      border-radius: 20px;
+      box-shadow: 0 1px 4px 0 rgba(112,114,125,.2);
+  }
+  button.small {
+      min-width: auto!important;
+      padding: 6px 8px;
+      line-height: 10px;
+      i {
+          margin-right: 0!important;
+          width: 12px;
+          height: 12px;
+      }
+  }
+}

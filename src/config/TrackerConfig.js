@@ -1,0 +1,9 @@
+export const enableTracker = false
+export const endPoint = process.env.REACT_APP_SNOWPLOW_URL
+export const platform = 'mob'
+export const nameSpace = 'MSO_Tracker'
+export const appId = 'MSO'
+export const encodeBase64 = false
+export const protocolMethod = 'http'
+export const port = null
+export const requestMethod = 'GET'

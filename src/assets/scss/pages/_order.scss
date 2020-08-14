@@ -1,0 +1,70 @@
+.page-order {
+    .columns {
+        display: flex;
+        width: 100%;
+        flex-flow: row wrap;
+        .column {
+            flex: 1 0 0;
+        }
+        @for $i from 1 through 4 {
+            .column-#{$i} {
+                flex: #{$i} 0 0;
+            }
+        }
+    }
+    .show-more {
+        &__row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+        &__column {
+            bottom: 0px;
+            position: absolute;
+            button {
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                box-shadow: rgba(21, 24, 35, 0.2) 0px 1px 4px 0px;
+            }
+        }
+    }
+    .collapse-header {
+        &.toLeft {
+            transition: transform 0.1s ease-out;
+            overflow: hidden;
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: left;
+            &.hide {
+                padding: 0px;
+                height: 0px;
+                transform: scaleX(0);
+            }
+        }
+        &.toRight {
+            transition: transform 0.1s ease-out;
+            overflow: hidden;
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: right;
+            &.hide {
+                padding: 0px;
+                height: 0px;
+                transform: scaleX(0);
+            }
+        }
+    }
+    .collapse {
+        transition: max-height 0.65s ease;
+        overflow: hidden;
+        position: relative;
+        max-height: 100px;
+        &.hide {
+            transition: max-height 0.35s ease;
+            max-height: 0px;
+        }
+    }
+}

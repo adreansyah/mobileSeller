@@ -1,0 +1,210 @@
+//
+// Color system
+//
+
+// Orange/Primary Color
+$orange-10 : #FFF0E6;
+$orange-20 : #FF9242;
+$orange-30 : #FF7D1D; // Base
+$orange-40 : #FF6C00; 
+$orange-50 : #E65015;
+
+// Green/Secondary Color
+$green-10 : #E7F6D1;
+$green-20 : #A4D067;
+$green-30 : #8FC742; // Base
+$green-40 : #82BB33;
+$green-50 : #5C940F; 
+
+// Red
+$red-10 : #FFEDEE;
+$red-20 : #FD474A;
+$red-30 : #EE2B2E; // Base
+$red-40 : #DC1013;
+$red-50 : #BB0000; 
+
+// Black
+$black-10 : #F8FBFC;
+$black-20 : #EFF3F6;
+$black-30 : #DCDEE3;
+$black-40 : #9C9DA6;
+$black-50 : #70727D;
+$black-60 : #434755;
+$black-70 : #151823;
+
+$white : #ffffff;
+$primary : $orange-30;
+$secondary-green : $green-30;
+$secondary-red : $red-30;
+$success : $green-30;
+$danger : $red-30;
+$warning : $orange-40;
+$info : $black-50;
+$light : $black-30;
+$dark : $black-70;
+
+$colors: (
+  ("primary", $orange-30),
+  ("secondary-green", $green-30),
+  ("secondary-red", $red-30),
+  ("success", $green-30),
+  ("danger", $red-30),
+  ("warning", $orange-40),
+  ("info", $black-50),
+  ("light", $black-30),
+  ("dark", $black-70),
+  ("white", $white)
+);
+
+//
+// Spacing
+//
+
+$padding-0 : 0px;
+$padding-1 : 4px;
+$padding-2 : 8px;
+$padding-3 : 12px;
+$padding-4 : 16px;
+$padding-5 : 20px;
+$padding-6 : 24px;
+$padding-7 : 28px;
+$padding-8 : 32px;
+$padding-9 : 36px;
+$padding-10 : 40px;
+$padding-11 : 44px;
+$padding-12 : 48px;
+
+$paddings: (
+  ("0", $padding-0),
+  ("1", $padding-1),
+  ("2", $padding-2),
+  ("3", $padding-3),
+  ("4", $padding-4),
+  ("5", $padding-5),
+  ("6", $padding-6),
+  ("7", $padding-7),
+  ("8", $padding-8),
+  ("9", $padding-9),
+  ("10", $padding-10),
+  ("11", $padding-11),
+  ("12", $padding-12),
+);
+
+$margin-0 : 0px;
+$margin-1 : 4px;
+$margin-2 : 8px;
+$margin-3 : 12px;
+$margin-4 : 16px;
+$margin-5 : 20px;
+$margin-6 : 24px;
+$margin-7 : 28px;
+$margin-8 : 32px;
+$margin-9 : 36px;
+$margin-10 : 40px;
+$margin-11 : 44px;
+$margin-12 : 48px;
+
+$margins: (
+  ("0", $margin-0),
+  ("1", $margin-1),
+  ("2", $margin-2),
+  ("3", $margin-3),
+  ("4", $margin-4),
+  ("5", $margin-5),
+  ("6", $margin-6),
+  ("7", $margin-7),
+  ("8", $margin-8),
+  ("9", $margin-9),
+  ("10", $margin-10),
+  ("11", $margin-11),
+  ("12", $margin-12),
+);
+
+// Body
+//
+// Settings for the `<body>` element.
+// shadow
+$shadow-default: 0 1px 4px 0 rgba(112, 114, 125, 0.2);
+$shadow-default-action: 0 1px 4px 0 rgba(112, 114, 125, 0.4);
+$shadow-hover: 0 2px 8px 0 rgba(112, 114, 125, 0.4);
+$shadow-disabled: 0 1px 3px 0 rgba(112, 114, 125, 0.2);
+
+$link-decoration:           none !default;
+$link-hover-decoration:     underline !default;
+
+$line-height-lg:              1.5 !default;
+$line-height-sm:              1.5 !default;
+
+$border-width:                1px !default;
+$border-color:                $black-40 !default;
+$border-radius:               4px !default;
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
+
+$font-family-rubik:           'Rubik', sans-serif;
+$font-family-base:            $font-family-rubik !default;
+// stylelint-enable value-keyword-case
+
+// font size
+$font-size-base:           14px !default;
+$font-size-d1:             42px !default; // 42px
+$font-size-d2:             28px !default; // 28px
+$font-size-d3:             24px !default; // 24px
+$font-size-d4:             20px !default; // 20px
+$font-size-h1:             16px !default; // 16px
+$font-size-h2:             14px !default; // 14px
+$font-size-h3:             12px !default; // 12px
+$font-size-h4:             10px !default; // 10px
+$font-size-b2:             12px !default; // 12px
+$font-size-b3:             10px !default; // 10px
+$font-size-b4:             10px !default; // 10px
+$font-size-p1:             14px !default; // 14px
+$font-size-p2:             12px !default; // 12px
+
+// font height
+$font-height-d1:           ($font-size-d1 + 2) !default;
+$font-height-d2:           ($font-size-d2 + 2) !default;
+$font-height-d3:           ($font-size-d3 + 2) !default;
+$font-height-d4:           ($font-size-d4 + 2) !default;
+$font-height-h1:           ($font-size-h1 + 2) !default;
+$font-height-h2:           ($font-size-h2 + 2) !default;
+$font-height-h3:           ($font-size-h3 + 2) !default;
+$font-height-h4:           ($font-size-h4 + 2) !default;
+$font-height-b2:           ($font-size-b2 + 2) !default;
+$font-height-b3:           ($font-size-b3 + 2) !default;
+$font-height-b4:           ($font-size-b4 + 2) !default;
+$font-height-p1:           1.5 !default;
+$font-height-p2:           1.5 !default;
+
+// font weight
+$font-weight-light:           300 !default;
+$font-weight-regular:         400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:          $font-weight-regular !default;
+$line-height-base:          ($font-size-base + 2) !default; // 20px
+
+
+$font-color-error:            $red-40 !default;
+$font-color-succes:           $green-40 !default;
+$font-color-warning:          $orange-20 !default;
+
+// Z-index master list
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;

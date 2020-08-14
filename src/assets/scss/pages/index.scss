@@ -1,0 +1,314 @@
+@import '../variable';
+@import 'login';
+@import 'settlement';
+@import 'mystore';
+@import 'helpcenter';
+@import 'order';
+@import 'statistic';
+@import 'home';
+
+html, body, #root{
+  background-color: #EFF3F6;
+  height: 100%;
+}
+
+// temp class
+.logo{
+  max-width: 184px;
+  
+  img{
+    height: auto;
+    width: 100%;
+  }
+}
+
+.alert{
+  i{
+    margin-right: 8px;
+  }
+}
+
+
+.height--100{
+  height: 100%;
+}
+.height--min-content{
+  height: min-content;
+}
+
+//** Utility 
+.u-bg-initial{
+  background: #EFF3F6;
+}
+.u-tx-color-sub{
+  color: #70727D;
+}
+.container{
+  //for dekstop
+  @media screen and (max-width: 414px){
+    margin-left: 16px !important;
+    margin-right: 16px !important; 
+    width: auto !important;
+  }
+
+  // .content{
+  //   @media screen and (max-width: 414px){
+  //     min-height: 570px;
+  //   }
+
+  //   @media screen and (max-width: 375px){
+  //     min-height: 510px;
+  //   }
+  // }
+}
+
+.content{
+  .form-group.form-group--line.form-group--inline{
+    margin-top: 24px;
+
+    &:last-child{
+      padding-bottom: 24px;
+    }
+  }
+  .form-group.form-group--line .input-group.icon-right{
+    select.input-control{
+      padding: 19px 0 4px;
+    }
+  }
+  // .optionbox-mobile .input-group-append{
+  //   bottom: 19px;
+  // }
+  .input-group-append{
+    top: 25px;
+  }
+  h2{
+    text-transform: inherit;
+  }
+  input::placeholder {
+    color: #9C9DA6;
+  }
+  .radiobutton{
+    color: #70727D;
+  }  
+}
+
+// disabled input style
+input.input-control:disabled,select.input-control:disabled{
+  color: lightgray;
+  -webkit-text-fill-color: lightgray;
+}
+
+.input-group-append.disabled{
+  opacity: 0.3;
+}
+
+.checkbox{
+  span{
+    color: #70727D;
+  }
+  
+  &.checkbox-white{
+    label::before{
+      background-color: white;
+    }
+  }
+}
+
+.custom-padding{
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.header{
+  padding: 14px 0;
+}
+
+.cont-checked{
+  position: relative;
+  height: 147px;	
+  width: 147px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  .checked-outer{
+    position: absolute;
+    z-index: 1;	
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.5;	
+    background-color: #8FC742;
+    border-radius: 50%;
+  }
+  
+  .checked-insider{
+    position: absolute;
+    z-index: 2;
+    height: 120px;
+    width: 120px;
+    background-color: #8FC742;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i{
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+.button--fixed{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#header-sticky.sticky{
+  position: sticky;
+  top : 0;
+}
+
+/* Utils */
+.title-s{
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.bd-bottom{
+  &:nth-child(-n+5){
+    border-bottom: 1px solid #DCDEE3;
+  }
+}
+
+.bd-bottom-dashed{
+  border-bottom: 1px solid #DCDEE3;
+  border-style: dashed;
+
+  &:last-child{
+    border: none;
+  }
+} 
+
+/* end utils */
+
+// Mixin for keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+  @-ms-keyframes #{$name} { @content; }
+  @keyframes #{$name} { @content; } 
+}
+
+// Mixin for animations
+@mixin animation($prop) {
+  -webkit-animation: $prop;
+  -moz-animation: $prop;
+  -o-animation: $prop;
+  animation: $prop;
+}
+
+// Create animation called 'check'
+@include keyframes(check) {
+  0% { height: 0; width: 0; }
+  25% { height: 0; width: 6px; }
+  50% { height: 10px; width: 6px; }
+}
+
+.i--checked{
+    @include animation(check 0.8s);
+    -moz-transform: scaleX(-1) rotate(135deg);
+    -ms-transform: scaleX(-1) rotate(135deg);
+    -webkit-transform: scaleX(-1) rotate(135deg);
+    transform: scaleX(-1) rotate(135deg);
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-right: 1.5px solid white;
+    border-top: 1.5px solid white;
+    content: '';
+    display: block;
+    height: 10px;
+    width: 6px;
+    left: 3px;
+    position: absolute;
+    top: 9px;
+}
+
+.loader {
+  color: #FF7D1D;
+  font-size: 5px;
+  margin: 20px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
